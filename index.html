@@ -8,22 +8,47 @@
 </head>
 <body>
 
-    <!-- Menu -->
+    <!-- Barra de navegação fixa -->
     <header>
         <div class="logo">🚚 LOGO</div>
-        <nav>
-            <a href="#sobre">Sobre</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+        <div class="menu-btn" id="menuToggle">
+            <span class="menu-icon">☰</span> Menu
+        </div>
     </header>
+
+    <!-- Menu expandido -->
+    <nav class="menu-expandido" id="menuExpandido">
+        <div class="menu-section">
+            <h3>Sobre</h3>
+            <ul>
+                <li>História</li>
+                <li>Missão</li>
+                <li>Equipa</li>
+            </ul>
+        </div>
+        <div class="menu-section">
+            <h3>Serviços</h3>
+            <ul>
+                <li>Transporte Nacional</li>
+                <li>Transporte Internacional</li>
+                <li>Logística</li>
+            </ul>
+        </div>
+        <div class="menu-section">
+            <h3>Outros</h3>
+            <ul>
+                <li>Notícias</li>
+                <li>Galeria</li>
+                <li>Contactos</li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
             <h1>Transporte Seguro e Rápido</h1>
             <p>Levamos a sua carga para qualquer destino com confiança e pontualidade.</p>
-            <a href="#contacto" class="btn">Pedir Orçamento</a>
         </div>
     </section>
 
@@ -52,21 +77,20 @@
         </div>
     </section>
 
-    <!-- Contacto -->
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <form>
-            <input type="text" placeholder="Nome" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Mensagem" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
     <!-- Rodapé -->
     <footer>
         <p>© 2025 Transporte Rodoviário - Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        // Script para expandir/retrair menu
+        const menuToggle = document.getElementById('menuToggle');
+        const menuExpandido = document.getElementById('menuExpandido');
+
+        menuToggle.addEventListener('click', () => {
+            menuExpandido.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
