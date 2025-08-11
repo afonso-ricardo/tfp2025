@@ -8,16 +8,16 @@
 </head>
 <body>
 
-    <!-- Barra de navegação fixa -->
-    <header>
+    <!-- Barra fixa -->
+    <header id="topbar">
         <div class="logo">🚚 LOGO</div>
-        <div class="menu-btn" id="menuToggle">
+        <button class="menu-btn" id="menuToggle">
             <span class="menu-icon">☰</span> Menu
-        </div>
+        </button>
     </header>
 
-    <!-- Menu expandido -->
-    <nav class="menu-expandido" id="menuExpandido">
+    <!-- Conteúdo do menu oculto -->
+    <nav class="menu-conteudo" id="menuConteudo">
         <div class="menu-section">
             <h3>Sobre</h3>
             <ul>
@@ -83,12 +83,11 @@
     </footer>
 
     <script>
-        // Script para expandir/retrair menu
         const menuToggle = document.getElementById('menuToggle');
-        const menuExpandido = document.getElementById('menuExpandido');
+        const menuConteudo = document.getElementById('menuConteudo');
 
         menuToggle.addEventListener('click', () => {
-            menuExpandido.classList.toggle('active');
+            menuConteudo.classList.toggle('ativo');
         });
     </script>
 
