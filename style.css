@@ -9,7 +9,7 @@ body {
     line-height: 1.6;
 }
 
-/* Barra fixa */
+/* Barra fixa no topo */
 header {
     background: #222;
     color: white;
@@ -20,7 +20,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 1000;
 }
 
 .logo {
@@ -34,14 +34,24 @@ header {
     align-items: center;
     gap: 8px;
     font-size: 1rem;
+    background: #ffcc00;
+    color: #222;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.menu-btn:hover {
+    background: #e6b800;
 }
 
 .menu-icon {
     font-size: 1.3rem;
 }
 
-/* Menu expandido */
-.menu-expandido {
+/* Conteúdo do menu (inicialmente escondido) */
+.menu-conteudo {
     background: #333;
     color: white;
     display: none;
@@ -51,11 +61,15 @@ header {
     position: fixed;
     top: 60px;
     width: 100%;
-    z-index: 9;
+    z-index: 999;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
 }
 
-.menu-expandido.active {
+.menu-conteudo.ativo {
     display: flex;
+    max-height: 400px; /* expande suavemente */
 }
 
 .menu-section {
@@ -90,7 +104,7 @@ header {
     justify-content: center;
     text-align: center;
     color: white;
-    padding-top: 60px; /* espaço para a barra fixa */
+    padding-top: 60px; /* espaço para barra fixa */
 }
 
 .hero-content {
