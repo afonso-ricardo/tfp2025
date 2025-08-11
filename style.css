@@ -9,6 +9,7 @@ body {
     line-height: 1.6;
 }
 
+/* Barra fixa */
 header {
     background: #222;
     color: white;
@@ -16,18 +17,71 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
-header nav a {
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.menu-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+}
+
+.menu-icon {
+    font-size: 1.3rem;
+}
+
+/* Menu expandido */
+.menu-expandido {
+    background: #333;
     color: white;
-    margin-left: 20px;
-    text-decoration: none;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    z-index: 9;
 }
 
-header nav a:hover {
+.menu-expandido.active {
+    display: flex;
+}
+
+.menu-section {
+    min-width: 150px;
+}
+
+.menu-section h3 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+}
+
+.menu-section ul {
+    list-style: none;
+}
+
+.menu-section li {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.menu-section li:hover {
     color: #ffcc00;
 }
 
+/* Hero */
 .hero {
     height: 80vh;
     background: url('https://images.unsplash.com/photo-1508170947414-8b51a21b1b68') no-repeat center/cover;
@@ -36,22 +90,13 @@ header nav a:hover {
     justify-content: center;
     text-align: center;
     color: white;
+    padding-top: 60px; /* espaço para a barra fixa */
 }
 
 .hero-content {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-}
-
-.btn {
-    background: #ffcc00;
-    padding: 10px 20px;
-    margin-top: 15px;
-    display: inline-block;
-    text-decoration: none;
-    color: black;
-    border-radius: 5px;
 }
 
 section {
@@ -71,25 +116,6 @@ section {
     padding: 20px;
     width: 250px;
     border-radius: 8px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-}
-
-form input, form textarea {
-    padding: 10px;
-    margin: 10px 0;
-}
-
-form button {
-    background: #ffcc00;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
 }
 
 footer {
